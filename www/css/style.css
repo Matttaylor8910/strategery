@@ -1,1 +1,4 @@
-/* Empty. Add your own CSS if you like */
+.limit-width {
+  margin: 0 auto;
+  max-width: 800px;
+}
