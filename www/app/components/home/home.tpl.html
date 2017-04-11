@@ -1,5 +1,49 @@
-<ion-view view-title="Home">
+<ion-view view-title="Lunch Roulette">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-clear button-positive" ng-click="$ctrl.reset()" ng-if="$ctrl.hasRolled">
+      <i class="icon ion-loop"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-positive" ng-click="$ctrl.roll()" ng-disabled="!$ctrl.peeps.length || !$ctrl.places.length">
+      <i class="icon ion-shuffle"></i>
+    </button>
+  </ion-nav-buttons>
   <ion-content>
-    <div class="item">This is going to be awesome</div>
+
+    <list-input
+      list="$ctrl.peeps"
+      icon-class="ion-person-add"
+      placeholder="Add Someone"
+      empty-text="Add some peeps!">
+    </list-input>
+
+    <list-input
+      list="$ctrl.places"
+      icon-class="ion-pizza"
+      placeholder="Add a Place"
+      empty-text="Add some places!">
+    </list-input>
+
+    <br>
+
+    <div class="padding">
+      <label class="item item-input">
+        <span class="input-label">How many groups?</span>
+        <input type="tel" ng-model="$ctrl.numGroups">
+      </label>
+    </div>
+
+    <div id="groups" class="padding-top">
+      <div class="text-center" ng-show="$ctrl.groups.length">Here are your groups:</div>
+      <div class="padding" ng-repeat="group in $ctrl.groups">
+        <h3 class="text-center" ng-bind="group.place"></h3>
+        <div class="list-container">
+          <div class="item" ng-repeat="peep in group.peeps" ng-bind="peep"></div>
+        </div>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

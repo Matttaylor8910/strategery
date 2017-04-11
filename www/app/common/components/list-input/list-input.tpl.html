@@ -1,0 +1,13 @@
+<form class="list list-inset" ng-submit="$ctrl.add($ctrl.inputText)">
+  <label class="item item-input">
+    <i class="icon placeholder-icon" ng-class="$ctrl.iconClass"></i>
+    <input id="add-input-{{ $ctrl.identifier }}" type="text" placeholder="{{ $ctrl.placeholder }}" ng-model="$ctrl.inputText">
+  </label>
+</form>
+<div class="list-container">
+  <div class="item" ng-repeat="item in $ctrl.list">
+    {{ item }}
+    <i class="icon ion-close" ng-click="$ctrl.remove(item)"></i>
+  </div>
+  <div ng-if="$ctrl.list.length === 0" ng-bind="$ctrl.emptyText"></div>
+</div>

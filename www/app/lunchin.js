@@ -2,6 +2,7 @@
   angular
     .module('lunchin', [
       'ionic',
+      'ionic.utils',
 
       'lunchin.home'
     ])

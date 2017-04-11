@@ -10,8 +10,12 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <link href="app/common/components/list-input/list-input.css" rel="stylesheet">
+
     <!-- libraries js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/lodash/4.17.2/lodash.min.js"></script>
+    <script src="lib/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -19,7 +23,11 @@
     <!-- lunchin js -->
     <script src="app/lunchin.js"></script>
 
-    <script src="app/components/home/home.component.js"></script>
+    <script src="app/common/services/localstorage.service.js"></script>
+
+    <script src="app/common/components/list-input/list-input.component.js"></script>
+
+    <script src="app/components/home/home.module.js"></script>
     <script src="app/components/home/home.controller.js"></script>
     <script src="app/components/home/home.routes.js"></script>
 

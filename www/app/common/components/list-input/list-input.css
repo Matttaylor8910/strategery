@@ -1,0 +1,15 @@
+.list-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.list-container .item {
+  margin: 5px 5px;
+  background: #ddd;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.list-container .item i {
+  margin-left: 5px;
+}
