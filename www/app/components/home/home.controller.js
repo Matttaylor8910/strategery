@@ -27,7 +27,7 @@
       $timeout(function() {
         $location.hash('groups');
         $ionicScrollDelegate.anchorScroll(true);
-      });
+      }, 0);
     }
 
     /**
