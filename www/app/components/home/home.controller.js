@@ -39,6 +39,8 @@
       $ctrl.places = [];
       $ctrl.hasRolled = false;
       $ctrl.groups = [];
+
+      $ionicScrollDelegate.scrollTop(true);
     }
 
     /**
