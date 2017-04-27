@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('lunchin.listInput', [])
+    .module('strategery.listInput', [])
     .component('listInput', {
       templateUrl: 'app/common/components/list-input/list-input.tpl.html',
       controller: ListInputController,

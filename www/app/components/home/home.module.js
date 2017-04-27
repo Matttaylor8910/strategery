@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('lunchin.home', [
-      'lunchin.listInput'
+    .module('strategery.home', [
+      'strategery.listInput'
     ]);
 })();

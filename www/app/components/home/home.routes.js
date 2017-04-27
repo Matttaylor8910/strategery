@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('lunchin.home')
+    .module('strategery.home')
     .config(homeConfig);
 
   function homeConfig($stateProvider) {

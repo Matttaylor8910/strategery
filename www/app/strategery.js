@@ -1,10 +1,10 @@
 (function() {
   angular
-    .module('lunchin', [
+    .module('strategery', [
       'ionic',
       'ionic.utils',
 
-      'lunchin.home'
+      'strategery.home'
     ])
 
     .run(function($ionicPlatform) {
