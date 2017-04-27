@@ -4,6 +4,8 @@
       'ionic',
       'ionic.utils',
 
+      'firebase',
+
       'strategery.home'
     ])
 

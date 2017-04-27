@@ -3,36 +3,27 @@
     .module('strategery.home')
     .controller('HomeController', HomeController);
 
-  function HomeController() {
+  function HomeController($firebaseArray) {
     var $ctrl = this;
 
-    $ctrl.rows = [
-      {
-        cols: [
-          {
-            color: 'red',
-            value: 8
-          },
-          {
-            color: 'red',
-            value: 4
-          }
-        ]
-      },
-      {
-        cols: [
-          {
-            color: 'blue',
-            value: 7
-          },
-          {
-            color: 'blue',
-            value: 6
-          }
-        ]
-      }
-    ];
+    var ref = firebase.database().ref().child("rows");
+    $ctrl.rows = $firebaseArray(ref);
 
-    firebase.database().ref('rows').set($ctrl.rows);
+    $ctrl.add = add;
+
+    function add() {
+      $ctrl.rows.$add({
+        cols: [
+          {
+            color: 'purple',
+            value: $ctrl.one || 0
+          },
+          {
+            color: 'grey',
+            value: $ctrl.two || 0
+          }
+        ]
+      });
+    }
   }
 })();

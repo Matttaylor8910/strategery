@@ -1,7 +1,22 @@
 <ion-view view-title="Strategery">
   <ion-content>
-    <div class="row" ng-repeat="row in $ctrl.rows">
-      <div class="col" ng-repeat="col in row.cols" ng-class="col.color">{{ col.value }}</div>
+    <div class="padding text-center" ng-show="!$ctrl.rows.length">
+      <ion-spinner></ion-spinner>
     </div>
+
+    <div class="row" ng-repeat="row in $ctrl.rows">
+      <div class="col text-center" ng-repeat="col in row.cols" ng-class="col.color">{{ col.value }}</div>
+      <div class="col text-right">
+        <button class="button button-small button-assertive" ng-click="$ctrl.rows.$remove(row)">Delete</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col text-center"><input ng-model="$ctrl.one"></div>
+      <div class="col text-center"><input ng-model="$ctrl.two"></div>
+      <div class="col"></div>
+    </div>
+
+    <button class="button-full button-positive" ng-click="$ctrl.add()">Add More</button>
   </ion-content>
 </ion-view>
