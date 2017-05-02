@@ -2,3 +2,7 @@
   margin: 0 auto;
   max-width: 800px;
 }
+
+.scroll-view.scroll-xy {
+  height: 100%;
+}

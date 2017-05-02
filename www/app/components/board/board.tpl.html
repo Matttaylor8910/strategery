@@ -1,0 +1,23 @@
+<ion-view>
+  <ion-scroll class="board-content" direction="xy">
+    <div class="padding text-center" ng-show="$ctrl.loading">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <div class="game-status-bar">
+      <i class="icon ion-gear-a padding-left"></i>
+      <div class="scores">
+        <div class="score"></div>
+      </div>
+    </div>
+
+    <div class="row" ng-repeat="row in $ctrl.game.rows">
+      <div class="col text-center grid-item" ng-class="col.team" ng-repeat="col in row.cols" ng-bind="col.value"></div>
+    </div>
+
+    <!--Just an error state-->
+    <div class="card" ng-if="$ctrl.errorText">
+      <div class="item text-center" ng-bind="$ctrl.errorText"></div>
+    </div>
+  </ion-scroll>
+</ion-view>

@@ -1,22 +1,22 @@
 <ion-view view-title="Strategery">
-  <ion-content>
-    <div class="padding text-center" ng-show="!$ctrl.rows.length">
-      <ion-spinner></ion-spinner>
+  <ion-content class="home-content">
+
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="$ctrl.modal.show()">CREATE A NEW GAME</button>
     </div>
 
-    <div class="row" ng-repeat="row in $ctrl.rows">
-      <div class="col text-center" ng-repeat="col in row.cols" ng-class="col.color">{{ col.value }}</div>
-      <div class="col text-right">
-        <button class="button button-small button-assertive" ng-click="$ctrl.rows.$remove(row)">Delete</button>
+    <br>
+
+    <div class="list">
+      <div class="text-center dark">JOIN AN EXISTING GAME</div>
+      <div class="padding text-center" ng-repeat="game in $ctrl.games" ui-sref="board({id: game.$id})">
+        {{ game.name }}
+        <i class="icon ion-chevron-right"></i>
+      </div>
+      <div class="text-center padding-top" ng-show="$ctrl.loading">
+        <ion-spinner></ion-spinner>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col text-center"><input ng-model="$ctrl.one"></div>
-      <div class="col text-center"><input ng-model="$ctrl.two"></div>
-      <div class="col"></div>
-    </div>
-
-    <button class="button-full button-positive" ng-click="$ctrl.add()">Add More</button>
   </ion-content>
 </ion-view>

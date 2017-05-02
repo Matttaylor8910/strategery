@@ -6,7 +6,8 @@
 
       'firebase',
 
-      'strategery.home'
+      'strategery.home',
+      'strategery.board'
     ])
 
     .run(function($ionicPlatform) {
@@ -34,15 +35,7 @@
     })
 
     .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider
-      // setup an abstract state for the tabs directive
-        .state('tab', {
-          abstract: true,
-          templateUrl: 'app/common/components/tabs/tabs.tpl.html',
-          controller: function () {}
-        });
-
-      // if none of the above states are matched, use this as the fallback
+      // if no states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/home');
     });
 })();

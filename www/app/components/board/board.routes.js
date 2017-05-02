@@ -5,10 +5,10 @@
 
   function homeConfig($stateProvider) {
     $stateProvider
-      .state('home', {
-        url: '/home',
-        templateUrl: 'app/components/home/home.tpl.html',
-        controller: 'HomeController',
+      .state('board', {
+        url: '/board/:id',
+        templateUrl: 'app/components/board/board.tpl.html',
+        controller: 'BoardController',
         controllerAs: '$ctrl'
       });
   }
