@@ -4,15 +4,8 @@
       <ion-spinner></ion-spinner>
     </div>
 
-    <div class="game-status-bar">
-      <i class="icon ion-gear-a padding-left"></i>
-      <div class="scores">
-        <div class="score"></div>
-      </div>
-    </div>
-
     <div class="row" ng-repeat="row in $ctrl.game.rows">
-      <div class="col text-center grid-item" ng-class="col.team" ng-repeat="col in row.cols" ng-bind="col.value"></div>
+      <div class="col text-center grid-item" ng-class="col.class" ng-repeat="col in row.cols" ng-bind="col.value"></div>
     </div>
 
     <!--Just an error state-->

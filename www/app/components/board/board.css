@@ -1,17 +1,8 @@
+/* GENERAL STYLING */
 .board-content {
   display: flex;
-  justify-content: center;
-}
-.board-content .game-status-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #333;
-  height: 40px;
-}
-.board-content .game-status-bar i {
-  color: #FFF;
-  font-size: 30px;
+  /*top: 44px;*/
+  /*margin-bottom: 44px;*/
 }
 .board-content .row {
   padding: 0;
@@ -25,10 +16,29 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
+  border: 1px solid #000;
+
+  /*For icons*/
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 50% !important;
 }
+
+/* PLAYER COLORS */
 .board-content .grid-item.red     { background: #96281B; }
 .board-content .grid-item.blue    { background: #336E7B; }
 .board-content .grid-item.green   { background: #1E824C; }
 .board-content .grid-item.purple  { background: #674172; }
 .board-content .grid-item.yellow  { background: #F5AB35; }
 .board-content .grid-item.black   { background: #333333; }
+
+/* ICONS */
+.board-content .grid-item.home {
+  background-image: url(../../../img/home.png);
+}
+.board-content .grid-item.mountain {
+  background-image: url(../../../img/mountain.png);
+}
+.board-content .grid-item.city {
+  background-image: url(../../../img/city.png);
+}

@@ -20,7 +20,6 @@
 
       $ctrl.games.$loaded().then(function(data) {
         $ctrl.loading = false;
-        console.log('loaded');
       });
 
       // load the modal

@@ -6,8 +6,6 @@
   function BoardController($state, $stateParams, strategery) {
     var $ctrl = this;
 
-    $ctrl.removeGame = strategery.removeGame;
-
     init();
 
     /**

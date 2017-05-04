@@ -80,17 +80,48 @@
      */
     function generateGrid(gridSize, numPlayers) {
       var rows = [];
+      // set mountains and/or other things
       for (var r = 0; r < gridSize; r++) {
         var cols = [];
         for (var c = 0; c < gridSize; c++) {
-          cols.push({
-            team: playerColors[_.random(numPlayers - 1)],
-            value: _.random(1, 5)
-          });
+          var tile, random = _.random(20);
+          if (random === 0) {
+            tile = { class: 'city', value: _.random(40, 50) };
+          } else if (random > 15) {
+            tile = { class: 'mountain' };
+          } else {
+            tile = { class: 'blank' };
+          }
+          cols.push(tile);
         }
         rows.push({ cols: cols });
       }
+      // set home bases
+      for (var p = 0; p < numPlayers; p++) {
+        var coordinates = getRandomEmptyLocation(rows);
+        rows[coordinates.x].cols[coordinates.y] = {
+          class: playerColors[p] + ' home',
+          value: 1
+        };
+      }
       return rows;
+    }
+
+    /**
+     * Get a random empty location on a grid
+     * @param grid
+     * @returns {*} - a coordinate
+     */
+    function getRandomEmptyLocation(grid) {
+      var coordinates = {
+        x: _.random(grid.length - 1),
+        y: _.random(grid.length - 1)
+      };
+      if (grid[coordinates.x].cols[coordinates.y].class === 'empty') {
+        return getRandomEmptyLocation(grid);
+      } else {
+        return coordinates;
+      }
     }
   }
 })();
