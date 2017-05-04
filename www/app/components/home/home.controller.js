@@ -7,6 +7,7 @@
     var $ctrl = this;
 
     $ctrl.addGame = addGame;
+    $ctrl.removeGame = strategery.removeGame;
 
     init();
 

@@ -1,5 +1,6 @@
 .board-content {
   display: flex;
+  justify-content: center;
 }
 .board-content .game-status-bar {
   display: flex;
