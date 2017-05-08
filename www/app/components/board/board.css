@@ -23,6 +23,13 @@
   background-repeat: no-repeat !important;
   background-size: 50% !important;
 }
+.board-content .loading-indicator {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* PLAYER COLORS */
 .board-content .grid-item.red     { background: #96281B; }
@@ -41,4 +48,10 @@
 }
 .board-content .grid-item.city {
   background-image: url(../../../img/city.png);
+}
+
+/* OVERRIDES */
+ion-scroll.board-content {
+  margin-top: 44px;
+  height: calc(100% - 44px) !important;
 }

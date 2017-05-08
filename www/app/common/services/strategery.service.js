@@ -7,6 +7,7 @@
     var playerColors = ['red', 'blue', 'green', 'purple', 'black', 'yellow'];
 
     var games;
+    var gamesList;
 
     var service = {
       // reference to the firebase database
@@ -28,6 +29,7 @@
     function init() {
       service.ref = firebase.database().ref();
       games = $firebaseArray(service.ref.child('games'));
+      gamesList = $firebaseArray(service.ref.child('gamesList'));
     }
 
     /**
@@ -40,10 +42,10 @@
     }
 
     /**
-     * Get a games object from the server
+     * Get a list of the games from the server
      */
     function getGames() {
-      return games;
+      return gamesList;
     }
 
     /**
@@ -59,6 +61,10 @@
           rows: generateGrid(gridSize, numPlayers)
         };
         games.$add(game).then(function (ref) {
+          gamesList.$add({
+            id: ref.key,
+            name: name
+          });
           resolve(ref);
         });
       });

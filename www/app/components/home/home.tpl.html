@@ -1,22 +1,28 @@
 <ion-view view-title="Strategery">
   <ion-content class="home-content limit-width">
 
-    <div class="padding">
-      <button class="button button-block button-positive" ng-click="$ctrl.modal.show()">CREATE A NEW GAME</button>
+    <div class="padding-left padding-right">
+      <button class="button button-block button-light" ng-click="$ctrl.modal.show()">FFA</button>
+    </div>
+    <div class="padding-left padding-right">
+      <button class="button button-block button-light" ng-click="$ctrl.modal.show()">1V1</button>
+    </div>
+    <div class="padding-left padding-right">
+      <button class="button button-block button-light" ng-click="$ctrl.modal.show()">CUSTOM GAME</button>
     </div>
 
     <br>
 
     <div class="list">
-      <div class="text-center dark">JOIN AN EXISTING GAME</div>
-      <div class="padding text-center" ng-repeat="game in $ctrl.games" ui-sref="board({id: game.$id})" on-hold="$ctrl.removeGame(game)">
+      <div class="text-center light">JOIN AN EXISTING CUSTOM GAME</div>
+      <div class="padding text-center light" ng-repeat="game in $ctrl.games" ui-sref="board({id: game.$id})" on-hold="$ctrl.removeGame(game)">
         {{ game.name }}
         <i class="icon ion-chevron-right"></i>
       </div>
       <div class="text-center padding-top" ng-show="$ctrl.loading">
         <ion-spinner></ion-spinner>
       </div>
-      <div class="text-center" ng-if="!$ctrl.loading && $ctrl.games.length === 0">No games to join :(</div>
+      <div class="text-center stable" ng-if="!$ctrl.loading && $ctrl.games.length === 0">No games to join :(</div>
     </div>
 
   </ion-content>

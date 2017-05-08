@@ -1,6 +1,11 @@
 <ion-view>
+  <ion-nav-buttons side="primary">
+    <button class="button button-clear" ng-click="$ctrl.promptExit()">
+      LEAVE GAME
+    </button>
+  </ion-nav-buttons>
   <ion-scroll class="board-content" direction="xy">
-    <div class="padding text-center" ng-show="$ctrl.loading">
+    <div class="loading-indicator" ng-if="$ctrl.loading">
       <ion-spinner></ion-spinner>
     </div>
 

@@ -6,3 +6,7 @@
 .scroll-view.scroll-xy {
   height: 100%;
 }
+
+ion-view, ion-modal-view {
+  background-color: #333 !important;
+}
